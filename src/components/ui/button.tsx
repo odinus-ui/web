@@ -8,14 +8,11 @@ export function Button(
 ) {
   return (
     <button
-      className={
-        "transition-opacity " +
-        buttonVariants({
-          variants: props.variants || "default",
-          size: props.size || "md",
-        })
-      }
       {...props}
+      className={` ${buttonVariants({
+        variants: props.variants || "default",
+        size: props.size || "md",
+      })} ${props.className || ""}`}
     >
       {props.children}
     </button>
@@ -44,6 +41,9 @@ export function buttonVariants({
 
   return [
     "transition-all",
+    "box-border",
+    "disabled:opacity-70",
+    "disabled:cursor-not-allowed",
     "duration-300",
     sizes[size as keyof typeof sizes],
     classes[variants as keyof typeof classes],
