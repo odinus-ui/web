@@ -9,9 +9,11 @@ interface TabContentsProps {
 export function TabContents({ children }: TabContentsProps) {
   return <div>{children}</div>;
 }
+
 interface TabContainerProps {
   children: ReactElement<TabContentsProps>[];
 }
+
 export function TabContainer({ children }: TabContainerProps) {
   const [activeTab, setActiveTab] = useState(0);
   const [indicatorStyle, setIndicatorStyle] = useState({ left: 0, width: 0 });
@@ -83,7 +85,7 @@ export function TabContainer({ children }: TabContainerProps) {
           />
         </div>
       </div>
-      <div className="rounded-md mt-2">{validChildren[activeTab]}</div>
+      <div className="rounded-md">{validChildren[activeTab]}</div>
     </div>
   );
 }

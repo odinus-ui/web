@@ -34,7 +34,7 @@ export function buttonVariants({
   };
 
   const sizes = {
-    sm: "px-2 py-1 text-xs rounded-sm",
+    sm: "px-2 py-1 text-xs rounded-md",
     md: "px-4 py-2 text-sm rounded-md",
     lg: "px-6 py-3 text-base rounded-lg",
   };

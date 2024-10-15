@@ -29,3 +29,7 @@ body {
     text-wrap: balance;
   }
 }
+
+*::selection {
+  background: #f7c14c1c;
+}

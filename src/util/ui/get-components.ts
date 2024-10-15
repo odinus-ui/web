@@ -32,13 +32,15 @@ export async function GetComponents(
         throw error;
       }
 
+      const needClient = fileContent.startsWith('"use client";');
+
       // Remove "use client" directive if the target is not "next"
       if (target !== "next") {
         fileContent = fileContent.replace(/^"use client";\s*/, "");
       }
 
       componentFiles.push({
-        needClient: fileContent.startsWith('"use client";'),
+        needClient,
         path: file,
         content: fileContent,
       });
