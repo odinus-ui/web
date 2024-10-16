@@ -7,7 +7,7 @@ import Input from "@/components/ui/Input";
 export default function AiAssistant() {
   return (
     <div className="flex h-[600px]">
-      <div className="w-[300px] border-r border-white/10 h-full">
+      <div className="w-[300px] hidden md:block border-r border-white/10 h-full">
         <div className="flex items-center justify-between p-3">
           <Button variants="ghost">
             <svg

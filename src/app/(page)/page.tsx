@@ -1,6 +1,7 @@
 "use client";
 import AiAssistant from "@/components/section/home/ai-assistant";
 import Authenticate from "@/components/section/home/authenicate";
+import MusicPlayer from "@/components/section/home/music";
 import Startup from "@/components/section/home/startup";
 import { buttonVariants } from "@/components/ui/button";
 import { TabContainer, TabContents } from "@/components/ui/tabs";
@@ -11,7 +12,9 @@ export default function Home() {
     <main>
       <section className="mt-28">
         <div className="my-14 text-center">
-          <h1 className="text-4xl font-bold ">Build your website easily</h1>
+          <h1 className="text-4xl font-bold ">
+            Effortlessly create your website.
+          </h1>
           <p className="mt-2">
             Odinus Ui is an ui-development kit for react-based frameworks.
           </p>
@@ -40,7 +43,9 @@ export default function Home() {
             </TabContents>
             <TabContents title="Cart">2</TabContents>
             <TabContents title="Dashboard">2</TabContents>
-            <TabContents title="Music">3</TabContents>
+            <TabContents title="Music">
+              <MusicPlayer />
+            </TabContents>
             <TabContents title="Pay">1</TabContents>
             <TabContents title="Startup">
               <Startup />

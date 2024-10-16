@@ -69,7 +69,7 @@ export function TabContainer({ children }: TabContainerProps) {
   return (
     <div id={containerId}>
       <div className="border-b border-b-white/10 relative">
-        <div className="flex p-1 text-sm">
+        <div className="flex p-1 text-sm overflow-x-hidden whitespace-nowrap">
           {validChildren.map((child, index) => (
             <button
               key={index}

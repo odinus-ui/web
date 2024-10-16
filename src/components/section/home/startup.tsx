@@ -22,10 +22,10 @@ export default function Startup() {
           <Badge text="UI Components Example" variant="outline" />
         </div>
         <h3 className="text-5xl font-black uppercase text-center">
-          Website? Easy.
+          Create, Build, Deploy
         </h3>
         <h3 className="text-5xl font-black uppercase text-center">
-          MAKE, BUILD, DEPLOY.
+          Simply make it happen
         </h3>
         <p className="text-center mt-8 opacity-50">
           Odinus is a project aimed at creating gaming platforms.

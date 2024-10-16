@@ -4,10 +4,12 @@ export default function Avatar({
   img,
   displayName,
   size = "md",
+  className = "",
 }: {
   img?: string;
   displayName: string;
   size?: "sm" | "md" | "lg";
+  className?: string;
 }) {
   const [isLoaded, setIsLoaded] = useState(false);
 
@@ -24,11 +26,13 @@ export default function Avatar({
     md: "w-10 h-10",
     lg: "w-12 h-12",
   };
+
   return (
     <div
-      className={`relative flex items-center justify-center rounded-full overflow-hidden ${
+      className={`flex-shrink-0 relative flex items-center justify-center rounded-full overflow-hidden ${
         isLoaded ? "" : "border"
-      } ${sizeClass[size]}`}
+      } ${sizeClass[size]} ${className}`}
+      style={{ aspectRatio: "1 / 1" }}
     >
       {!isLoaded || !img ? (
         <p className="relative text-center top-[-1px]">{displayName}</p>
@@ -36,7 +40,7 @@ export default function Avatar({
         <></>
       )}
       <img
-        className="h-full select-none"
+        className="w-full h-full select-none"
         src={img}
         alt="avatar"
         style={{ display: isLoaded ? "block" : "none" }}
