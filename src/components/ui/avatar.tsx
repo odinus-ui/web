@@ -35,7 +35,7 @@ export default function Avatar({
       style={{ aspectRatio: "1 / 1" }}
     >
       {!isLoaded || !img ? (
-        <p className="relative text-center top-[-1px]">{displayName}</p>
+        <p className="relative text-center">{displayName}</p>
       ) : (
         <></>
       )}

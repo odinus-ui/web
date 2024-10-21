@@ -4,6 +4,7 @@ import Authenticate from "@/components/section/home/authenicate";
 import MusicPlayer from "@/components/section/home/music";
 import Startup from "@/components/section/home/startup";
 import { buttonVariants } from "@/components/ui/button";
+import DropdownMenu from "@/components/ui/dropdown-menu";
 import { TabContainer, TabContents } from "@/components/ui/tabs";
 import Link from "next/link";
 
@@ -32,6 +33,13 @@ export default function Home() {
               Components
             </Link>
           </div>
+          <DropdownMenu>
+            <DropdownMenu.Trigger>Test</DropdownMenu.Trigger>
+            <DropdownMenu.Content>
+              <DropdownMenu.Item>Test</DropdownMenu.Item>
+            </DropdownMenu.Content>
+          </DropdownMenu>
+          <p>ㅎㅇ</p>
         </div>
         <div className="w-[98%] max-w-[1200px] mx-auto border border-white/10 rounded-md">
           <TabContainer>

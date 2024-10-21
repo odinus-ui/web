@@ -13,6 +13,7 @@ const config: Config = {
         foreground: "var(--foreground)",
         primary: "var(--primary)",
         "primary-foreground": "var(--primary-foreground)",
+        border: "var(--border)",
       },
     },
   },

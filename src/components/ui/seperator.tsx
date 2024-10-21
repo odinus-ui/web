@@ -8,12 +8,6 @@ export default function Seperator({
   orientation?: "horizontal" | "vertical";
 }) {
   const isHorizontal = orientation === "horizontal";
-  const textAlignClass =
-    textPosition === "left"
-      ? "justify-start"
-      : textPosition === "right"
-      ? "justify-end"
-      : "justify-center";
 
   return (
     <div
