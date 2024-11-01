@@ -3,7 +3,7 @@ import AiAssistant from "@/components/section/home/ai-assistant";
 import Authenticate from "@/components/section/home/authenicate";
 import MusicPlayer from "@/components/section/home/music";
 import Startup from "@/components/section/home/startup";
-import { buttonVariants } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 import DropdownMenu from "@/components/ui/dropdown-menu";
 import { TabContainer, TabContents } from "@/components/ui/tabs";
 import Link from "next/link";
@@ -34,7 +34,9 @@ export default function Home() {
             </Link>
           </div>
           <DropdownMenu>
-            <DropdownMenu.Trigger>Test</DropdownMenu.Trigger>
+            <DropdownMenu.Trigger>
+              <Button>gd</Button>
+            </DropdownMenu.Trigger>
             <DropdownMenu.Content>
               <DropdownMenu.Item>Test</DropdownMenu.Item>
             </DropdownMenu.Content>

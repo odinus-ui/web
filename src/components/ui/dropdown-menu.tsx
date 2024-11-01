@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 
 function DropdownMenu({
   children,
@@ -9,26 +9,38 @@ function DropdownMenu({
   >[];
 }) {
   const [isOpen, setOpen] = useState(false);
+  const [triggerHeight, setTriggerHeight] = useState(0);
+  const menuRef = useRef<HTMLDivElement>(null);
+  const triggerRef = useRef<HTMLDivElement>(null);
 
   const handleTriggerClick = () => {
     setOpen(true);
   };
+
   const handleClickOutside = (event: MouseEvent) => {
-    setTimeout(() => setOpen(false), 150);
+    if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+      setOpen(false);
+    }
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
+    setTriggerHeight(triggerRef.current?.offsetHeight || 0);
     document.addEventListener("mousedown", handleClickOutside);
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
   return (
-    <div className="relative w-fit">
+    <div className="relative w-fit" ref={menuRef}>
       {React.Children.map(children, (child, index) => {
         if (child.type === DropdownMenu.Trigger) {
           return (
-            <div className="w-fit" key={index} onClick={handleTriggerClick}>
+            <div
+              ref={triggerRef}
+              className="w-fit"
+              key={index}
+              onClick={handleTriggerClick}
+            >
               {child}
             </div>
           );
@@ -36,7 +48,10 @@ function DropdownMenu({
         return (
           <div
             key={index}
-            className={`${isOpen ? "" : "hidden"} w-9 h-0 relative`}
+            className={`${
+              isOpen ? "" : "hidden"
+            } w-9 h-0 absolute left-1/2 transform -translate-x-1/2`}
+            style={{ top: triggerHeight + 3 }}
           >
             {child}
           </div>
