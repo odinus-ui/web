@@ -2,16 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-  --border: rgba(76, 76, 76, 0.556);
-  --primary: #f7c14c;
-  --primary-foreground: #2b2417;
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
+    --background: #ffffff;
+    --foreground: #171717;
+    --border: rgba(76, 76, 76, 0.159);
+    --primary: #f7c14c;
+    --primary-foreground: #2b2417;
+  }
+
+  .dark {
     --background: #0a0a0a;
     --foreground: #ededed;
     --border: rgba(76, 76, 76, 0.556);

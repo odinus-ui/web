@@ -2,6 +2,7 @@ import { Noto_Sans_KR } from "next/font/google";
 import "@/styles/globals.css";
 import GlobalHeader from "@/components/section/global/header";
 import GlobalFooter from "@/components/section/global/footer";
+import { ThemeProvider } from "@/components/ui/theme-proider";
 
 const fontSans = Noto_Sans_KR({
   subsets: ["latin"],
@@ -15,9 +16,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${fontSans.className} antialiased`}>
-        <GlobalHeader />
-        {children}
-        <GlobalFooter />
+        <ThemeProvider defaultTheme="system" enableSystem attribute="class">
+          <GlobalHeader />
+          {children}
+          <GlobalFooter />
+        </ThemeProvider>
       </body>
     </html>
   );

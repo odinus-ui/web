@@ -17,13 +17,13 @@ export default function Seperator({
     >
       {textPosition === "left" && displayText && (
         <>
-          <p className="whitespace-nowrap text-center text-xs text-white/20">
+          <p className="whitespace-nowrap text-center text-xs text-border">
             {displayText}
           </p>
           <div
             className={`${
               isHorizontal ? "h-[1px] w-full" : "w-[1px] h-full"
-            } bg-white/20`}
+            } bg-border`}
           ></div>
         </>
       )}
@@ -32,15 +32,15 @@ export default function Seperator({
           <div
             className={`${
               isHorizontal ? "h-[1px] w-full" : "w-[1px] h-full"
-            } bg-white/20`}
+            } bg-border`}
           ></div>
-          <p className="whitespace-nowrap text-center text-xs text-white/20">
+          <p className="whitespace-nowrap text-center text-xs text-border">
             {displayText}
           </p>
           <div
             className={`${
               isHorizontal ? "h-[1px] w-full" : "w-[1px] h-full"
-            } bg-white/20`}
+            } bg-border`}
           ></div>
         </>
       )}
@@ -49,9 +49,9 @@ export default function Seperator({
           <div
             className={`${
               isHorizontal ? "h-[1px] w-full" : "w-[1px] h-full"
-            } bg-white/20`}
+            } bg-border`}
           ></div>
-          <p className="whitespace-nowrap text-center text-xs text-white/20">
+          <p className="whitespace-nowrap text-center text-xs text-border">
             {displayText}
           </p>
         </>
@@ -60,7 +60,7 @@ export default function Seperator({
         <div
           className={`${
             isHorizontal ? "h-[1px] w-full" : "w-[1px] h-full"
-          } bg-white/20`}
+          } bg-border`}
         ></div>
       )}
     </div>

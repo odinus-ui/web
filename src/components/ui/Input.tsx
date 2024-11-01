@@ -11,7 +11,7 @@ export default function Input({
     <input
       placeholder={placeholder}
       type={type}
-      className={`w-full h-10 rounded-md bg-transparent border border-white/10 focus:outline-none text-sm px-2 ${className}`}
+      className={`w-full h-10 rounded-md bg-transparent border border-border focus:outline-none text-sm px-2 ${className}`}
     />
   );
 }

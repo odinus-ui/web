@@ -33,17 +33,8 @@ export default function Home() {
               Components
             </Link>
           </div>
-          <DropdownMenu>
-            <DropdownMenu.Trigger>
-              <Button>gd</Button>
-            </DropdownMenu.Trigger>
-            <DropdownMenu.Content>
-              <DropdownMenu.Item>Test</DropdownMenu.Item>
-            </DropdownMenu.Content>
-          </DropdownMenu>
-          <p>ㅎㅇ</p>
         </div>
-        <div className="w-[98%] max-w-[1200px] mx-auto border border-white/10 rounded-md">
+        <div className="w-[98%] max-w-[1200px] mx-auto border border-border rounded-md">
           <TabContainer>
             <TabContents title="AI Assistant">
               <AiAssistant />

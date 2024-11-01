@@ -28,15 +28,15 @@ export function buttonVariants({
 }): string {
   const classes = {
     default: "font-normal text-primary-foreground bg-primary hover:opacity-70",
-    outline: "border border-white/40 hover:bg-white/40",
+    outline: "border border-border hover:bg-white/40",
     destructive: "font-bold bg-red-500 hover:opacity-90",
     ghost: "hover:bg-white/40",
   };
 
   const sizes = {
     sm: "px-2 py-1 text-xs rounded-md",
-    md: "px-4 py-2 text-sm rounded-md",
-    lg: "px-6 py-3 text-base rounded-lg",
+    md: "px-2 py-2 text-sm rounded-md",
+    lg: "px-3 py-3 text-base rounded-lg",
   };
 
   return [

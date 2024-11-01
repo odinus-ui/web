@@ -1,6 +1,5 @@
 "use client";
 import React, { useState, useRef, useEffect } from "react";
-
 function DropdownMenu({
   children,
 }: {
@@ -30,6 +29,7 @@ function DropdownMenu({
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
+
   return (
     <div className="relative w-fit" ref={menuRef}>
       {React.Children.map(children, (child, index) => {
@@ -48,9 +48,7 @@ function DropdownMenu({
         return (
           <div
             key={index}
-            className={`${
-              isOpen ? "" : "hidden"
-            } w-9 h-0 absolute left-1/2 transform -translate-x-1/2`}
+            className={`${isOpen ? "" : "hidden"} w-9 h-0`}
             style={{ top: triggerHeight + 3 }}
           >
             {child}
@@ -65,9 +63,21 @@ DropdownMenu.Trigger = ({ children }: { children: React.ReactNode }) => {
   return <>{children}</>;
 };
 
-DropdownMenu.Content = ({ children }: { children: React.ReactNode }) => {
+DropdownMenu.Content = ({
+  children,
+  position = "left",
+}: {
+  children: React.ReactNode;
+  position?: "left" | "right";
+}) => {
+  const positionStyle =
+    position === "left" ? { left: "0px" } : { right: "0px" };
+
   return (
-    <div className="border border-border rounded-md w-fit overflow-hidden">
+    <div
+      className="border absolute z-50 bg-background border-border mt-2 rounded-md w-fit overflow-hidden"
+      style={{ ...positionStyle }}
+    >
       {children}
     </div>
   );
@@ -80,7 +90,14 @@ DropdownMenu.Item = ({
   children: React.ReactNode;
   onClick?: () => void;
 }) => {
-  return <button onClick={() => alert("worked")}>{children}</button>;
+  return (
+    <button
+      className="min-w-48 text-left p-2 shadow-sm hover:bg-white/10"
+      onClick={onClick}
+    >
+      {children}
+    </button>
+  );
 };
 
 export default DropdownMenu;
